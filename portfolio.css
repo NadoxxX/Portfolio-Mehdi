@@ -1,0 +1,114 @@
+/* Reset léger */
+:root{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --accent:#0b6efd;
+    --muted:#6b7280;
+    --text:#0f172a; /* Texte sombre (remplacé blanc) */
+    --radius:10px;
+    --maxw:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:1.25rem}
+
+/* Header / Navigation */
+.site-header{background:#000000;box-shadow:0 2px 6px rgba(10,10,10,0.05);position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.site-title{font-size:1.05rem;margin:0;padding:0.6rem 0}
+#nav-toggle{display:none;background:transparent;border:1px solid #ffffff;padding:0.4rem 0.6rem;border-radius:6px;cursor:pointer}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem}
+.main-nav a{display:inline-block;padding:0.75rem 0.6rem;color:var(--text);text-decoration:none;border-radius:6px}
+.main-nav a:hover, .main-nav a:focus{background:rgba(11,110,253,0.08);color:var(--accent)}
+
+/* Header-specific overrides: garder le texte clair sur fond noir */
+.site-header .site-title,
+.site-header .main-nav a,
+.site-header #nav-toggle { color: #ffffff; }
+
+
+
+/* Aceuille */
+.hero{padding:3.5rem 0;background:linear-gradient(180deg, #00eeff, #000000)}
+.hero .lead (color: red;){color:var(--muted);max-width:70ch}
+.cta .btn{background:var(--accent);color:#ffffff;padding:0.6rem 1rem;border-radius:8px;text-decoration:none}
+
+/* Sections */
+.section{padding:2rem 0}
+.card{background:var(--card);border-radius:var(--radius);padding:1rem;box-shadow:0 6px 18px rgba(12,15,30,0.06);margin-bottom:1rem}
+
+
+.CV{
+    background-image: url("CV.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    opacity: 1;
+}
+
+.mehdi{
+    background-image: url("mehdi.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20%;
+    opacity: 1;
+}
+
+
+html { scroll-behavior: smooth; }
+
+/* Navigation */
+.nav-principale ul { align-items: center; }
+.nav-principale.open ul { display: flex; }
+
+@media (max-width: 800px) {
+    #nav-bouton { display: inline-block; }
+    .nav-principale ul { display: none; flex-direction: column; gap: 0; }
+    .nav-principale.open ul { display: flex; }
+    .entete-interne { gap: 0.5rem; }
+}
+
+/* Mise en page du CV */
+.cv-disposition{display:flex;gap:1rem;align-items:flex-start;max-width:1200px;margin:0 auto}
+.cv-image{flex:0 0 55%;min-height:820px;background:#eef2ff;border:1px solid rgba(0,0,0,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;box-shadow:0 8px 24px rgba(12,15,30,0.06);overflow:hidden}
+.cv-infos{flex:0 0 45%;min-width:260px}
+
+@media (max-width:900px){
+    .cv-disposition{flex-direction:column}
+    .cv-image{width:100%;flex:unset;min-height:560px}
+    .cv-infos{flex:unset;min-width:unset}
+}
+
+/* Image du CV*/
+.cv-image img.cv-photo{display:block;max-width:100%;max-height:100%;margin:auto;object-fit:contain;object-position:center center;border-radius:6px}
+.cv-image{padding:0}
+
+@media (min-width:1400px){
+    .cv-image{min-height:1000px}
+}
+
+/* Passions */
+.passions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.passion-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:1rem;border-radius:10px;box-shadow:0 8px 20px rgba(12,15,30,0.06);border:1px solid rgba(11,110,253,0.06);display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem}
+.passion-icon{font-size:2.2rem;width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(11,110,253,0.08),rgba(11,110,253,0.02));color:var(--accent)}
+.passion-title{margin:0;font-size:1.05rem}
+.passion-desc{margin:0;color:var(--muted);font-size:0.95rem}
+
+@media (max-width:520px){
+    .passion-icon{width:44px;height:44px;font-size:1.6rem}
+}
+
+/* Stages */
+.stages-list{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+.stage{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(12,15,30,0.04);border-left:4px solid var(--accent)}
+.stage h4{margin:0 0 0.25rem 0;font-size:1.05rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.stage .duration{font-weight:600;color:var(--muted);font-size:0.95rem}
+.stage-duration{margin:0 0 0.5rem 0;color:var(--muted)}
+.stage-desc{margin:0;color:var(--text)}
+
+/* Stages */
+@media (max-width:700px){
+    .stage h4{font-size:1rem}
+}
+
+
